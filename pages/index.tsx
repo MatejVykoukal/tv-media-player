@@ -1,9 +1,12 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 export default function Home() {
+	const [showTestText, setShowTestText] = useState(false);
+
 	useEffect(() => {
 		window.addEventListener('keypress', () => {
 			alert('hello');
+			setShowTestText(true);
 		});
 	}, []);
 
@@ -15,6 +18,13 @@ export default function Home() {
 				<button>Alert me!</button>
 				<button>Chabge background</button>
 			</nav>
+			<main>
+				{showTestText && (
+					<span>
+						Hello, if you can see me, your keypress events are working! Awesome.
+					</span>
+				)}
+			</main>
 		</div>
 	);
 }
