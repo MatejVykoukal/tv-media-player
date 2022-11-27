@@ -1,4 +1,12 @@
+import { useEffect } from 'react';
+
 export default function Home() {
+	if (window) {
+		window.addEventListener('keypress', () => {
+			alert('hello');
+		});
+	}
+
 	return (
 		<div>
 			<p>Press arrows to navigate between items.</p>
