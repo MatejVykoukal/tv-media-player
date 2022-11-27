@@ -1,11 +1,11 @@
 import { useEffect } from 'react';
 
 export default function Home() {
-	if (window) {
+	useEffect(() => {
 		window.addEventListener('keypress', () => {
 			alert('hello');
 		});
-	}
+	}, []);
 
 	return (
 		<div>
